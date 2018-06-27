@@ -3,19 +3,19 @@ package Part1.bottle;
 public class Bottle {
 
     private static String song() {
-        return compose(99, 0);
+        return getVerses(99, 0);
     }
 
-    private static String compose(int hi, int lo) {
+    private static String getVerses(int hi, int lo) {
         StringBuilder poem = new StringBuilder();
         for (int n = hi; n >= lo; n--) {
-            poem.append(compose(n));
+            poem.append(getVerse(n));
             poem.append("\n");
         }
         return poem.toString();
     }
 
-    private static String compose(int n) {
+    private static String getVerse(int n) {
         String verse = "";
         verse += n == 0 ? "No more bottles" : (n == 1) ? "1 bottle" : n + " bottles";
         verse += " of beer on the wall, ";
