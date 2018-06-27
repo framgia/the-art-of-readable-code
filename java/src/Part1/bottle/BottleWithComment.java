@@ -3,19 +3,19 @@ package Part1.bottle;
 public class BottleWithComment {
 
     private static String song() {
-        return compose(99, 0);
+        return getVerses(99, 0);
     }
 
-    private static String compose(int hi, int lo) { // BAD: hi and lo are not specific enough
+    private static String getVerses(int hi, int lo) { // BAD: hi and lo are not specific enough
         StringBuilder poem = new StringBuilder();
         for (int n = hi; n >= lo; n--) {
-            poem.append(compose(n));
+            poem.append(getVerse(n));
             poem.append("\n");
         }
         return poem.toString();
     }
 
-    private static String compose(int n) { // BAD: n is too generic
+    private static String getVerse(int n) { // BAD: n is too generic
         // BAD: inconsistent style
         // BAD: incomprehensible code
         // BAD: a giant expression

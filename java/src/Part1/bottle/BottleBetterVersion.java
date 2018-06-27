@@ -3,19 +3,19 @@ package Part1.bottle;
 public class BottleBetterVersion {
 
     private static String song() {
-        return compose(99, 0);
+        return getVerses(99, 0);
     }
 
-    private static String compose(int start, int end) { // GOOD: specific name
+    private static String getVerses(int start, int end) { // GOOD: specific name
         StringBuilder poem = new StringBuilder();
         for (int i = start; i >= end; i--) {
-            poem.append(compose(i));
+            poem.append(getVerse(i));
             poem.append("\n");
         }
         return poem.toString();
     }
 
-    private static String compose(int number) {  // GOOD: specific name
+    private static String getVerse(int number) {  // GOOD: specific name
         // GOOD: show the control flow and cases instead of hiding it in a big expression
         switch (number) {
             case 0:
