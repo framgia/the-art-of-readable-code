@@ -21,14 +21,11 @@ class Bottles
     private function verse(int $n)
     {
         $verse = '';
-
-        $verse .=  $n == 0 ? 'No more bottles' :  ( $n == 1) ? '1 bottle' :  $n . ' bottles';
-        $verse .= ' of beer on the wall, ';
-        $verse .=  $n == 0 ? 'No more bottles' :  ( $n == 1) ? '1 bottle' :  $n . ' bottles' . ' of beer.';
+        $verse .=  ($n == 0 ? 'No more' : $n) . ' bottle' . ($n == 1 ? '' : 's') . ' of beer on the wall. ';
+        $verse .=  ($n == 0 ? 'No more' : $n) . ' bottle' . ($n == 1 ? '' : 's') . ' of beer.';
         $verse .= '</br>';
-        $verse .=  $n == 1 ? 'Go to the store and buy some more, ' : 'Take one down and pass it around, ';
-        $verse .=  $n == 1 ? 'No more bottles' :  ( $n == 2) ? '1 bottle' :  $n == 0 ? '99 bottles' : ( $n - 1) . ' bottles';
-        $verse .= ' of beer on the wall.';
+        $verse .=  $n > 0 ? ('Take ' . ($n > 1 ? 'one' : 'it') . ' down and pass it around, ') : 'Go to the store and buy some more, ';
+        $verse .=  ($n - 1 < 0 ? 99 : ($n - 1 == 0 ? ' no more ' : $n - 1)) . ' bottle' . ($n == 1 ? '' : 's') . ' of beer on the wall.';
         $verse .= '</br>';
 
         return $verse;
