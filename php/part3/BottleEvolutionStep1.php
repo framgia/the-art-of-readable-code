@@ -7,7 +7,7 @@ class Bottle
         return $this->verses(99, 0);
     }
 
-    private function verses(int $starting, int $ending)
+    public function verses(int $starting, int $ending)
     {
         $poem = '';
         for ( $i = $starting; $i >= $ending; $i--) {
@@ -18,7 +18,7 @@ class Bottle
         return $poem;
     }
 
-    private function verse(int $number)
+    public function verse(int $number)
     {
         switch ($number) {
             case 0:

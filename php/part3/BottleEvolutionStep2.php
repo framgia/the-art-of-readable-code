@@ -7,7 +7,7 @@ class Bottle
         return $this->verses(99, 0);
     }
 
-    private function verses(int $starting, int $ending) // GOOD: specific name
+    public function verses(int $starting, int $ending) // GOOD: specific name
     {
         $poem = '';
         for ( $i = $starting; $i >= $ending; $i--) {
@@ -18,7 +18,7 @@ class Bottle
         return $poem;
     }
 
-    private function verse(int $number) // GOOD: specific name
+    public function verse(int $number) // GOOD: specific name
     {
         # Now identify all the subproblems and merge all cases
         # into one, remember that all subproblem should also only
@@ -41,7 +41,7 @@ class Bottle
 
     # the subproblem choosing the correct container name
     # base on the number of bottle
-    private function container(int $number)
+    public function container(int $number)
     {
         if ($number == 1) {
             return 'bottle';

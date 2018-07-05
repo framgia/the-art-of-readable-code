@@ -7,7 +7,7 @@ class BottleBetterVersion
         return $this->verses(99, 0);
     }
 
-    private function verses(int $starting, int $ending) // GOOD: specific name
+    public function verses(int $starting, int $ending) // GOOD: specific name
     {
         $poem = '';
         for ( $i = $starting; $i >= $ending; $i--) {
@@ -18,7 +18,7 @@ class BottleBetterVersion
         return $poem;
     }
 
-    private function verse(int $number) // GOOD: specific name
+    public function verse(int $number) // GOOD: specific name
     {
         // GOOD: show the control flow and cases instead of hiding it in a big expression
         switch ($number) {

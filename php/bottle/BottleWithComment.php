@@ -7,7 +7,7 @@ class BottleWithComment
         return $this->verses(99, 0);
     }
 
-    private function verses(int $hi, int $lo) // BAD: hi and lo are not specific enough
+    public function verses(int $hi, int $lo) // BAD: hi and lo are not specific enough
     {
         $poem = '';
         for ( $n = $hi; $n >= $lo; $n--) {
@@ -18,7 +18,7 @@ class BottleWithComment
         return $poem;
     }
 
-    private function verse(int $n) // BAD: n is too generic
+    public function verse(int $n) // BAD: n is too generic
     {
         // BAD: inconsistent style
         // BAD: incomprehensible code

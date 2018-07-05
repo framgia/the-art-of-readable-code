@@ -7,7 +7,7 @@ class Bottles
         return $this->verses(99, 0);
     }
 
-    private function verses(int $hi, int $lo)
+    public function verses(int $hi, int $lo)
     {
         $poem = '';
         for ( $n = $hi; $n >= $lo; $n--) {
@@ -18,7 +18,7 @@ class Bottles
         return $poem;
     }
 
-    private function verse(int $n)
+    public function verse(int $n)
     {
         $verse = '';
         $verse .=  ($n == 0 ? 'No more' : $n) . ' bottle' . ($n == 1 ? '' : 's') . ' of beer on the wall. ';

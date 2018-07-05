@@ -25,7 +25,7 @@ class User
     # Can you come up with a better name here
     # Find a specific alternative to get that perfectly describe this
     # function
-    private function getUsers()
+    public function getUsers()
     {
         # What is more important here?
         # the format of the date

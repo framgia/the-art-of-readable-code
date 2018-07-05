@@ -26,7 +26,7 @@ class User
         return $ageFirst + $ageLast;
     }
 
-    private function getUser()
+    public function getUser()
     {
         $curl = curl_init();
         $currentDate = date('%Y/%m/%d');
