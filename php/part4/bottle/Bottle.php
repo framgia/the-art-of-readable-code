@@ -4,7 +4,7 @@ class Bottle
 {
     public function song()
     {
-        return $this->verses(99, 0);
+        return $this->verses(99, 99);
     }
 
     public function verses(int $starting, int $ending) // GOOD: specific name
@@ -22,8 +22,8 @@ class Bottle
     {
         return ucfirst($this->quantity($number)) . ' ' . $this->container($number) . ' of beer on the wall, ' .
             $this->quantity($number) . ' ' . $this->container($number) . ' of beer. ' .  '</br>'  .
-            $this->action($numer) .
-            $this->quantity($this->successor($numer)) . ' ' . $this->container($this->successor($numer)) . ' of beer on the wall. ' . '</br>';
+            $this->action($number) .
+            $this->quantity($this->successor($number)) . ' ' . $this->container($this->successor($number)) . ' of beer on the wall. ' . '</br>';
     }
 
     # subproblem: quantity base on number
@@ -53,11 +53,11 @@ class Bottle
             return 'Go to the store and buy some more, ';
         }
 
-        return 'Take ' . $this->pronoun($numer) . ' down and pass it around, ';
+        return 'Take ' . $this->pronoun($number) . ' down and pass it around, ';
     }
 
     # subproblem: pronoun base on number
-    public function pronoun($numer)
+    public function pronoun($number)
     {
         if ($number == 1) {
             return 'it';
@@ -67,12 +67,12 @@ class Bottle
     }
 
     # subproblem: choosing next number
-    public function successor($numer)
+    public function successor($number)
     {
         if ($number == 0) {
             return 99;
         }
 
-        return $numer - 1;
+        return $number - 1;
     }
 }

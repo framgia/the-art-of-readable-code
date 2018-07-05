@@ -21,7 +21,7 @@ class User
         return $totalYear;
     }
 
-    private function getUsers()
+    public function getUsers()
     {
         $curl = curl_init();
         $currentDate = date('%Y/%m/%d');
