@@ -2,11 +2,11 @@ package com.framgia.Part3.bottle;
 
 public class Bottle {
 
-    private static String song() {
+    public static String song() {
         return getVerses(99, 0);
     }
 
-    private static String getVerses(int start, int end) {
+    public static String getVerses(int start, int end) {
         StringBuilder poem = new StringBuilder();
         for (int i = start; i >= end; i--) {
             poem.append(getVerse(i));
@@ -15,7 +15,7 @@ public class Bottle {
         return poem.toString();
     }
 
-    private static String getVerse(int number) {
+    public static String getVerse(int number) {
         switch (number) {
             case 0:
                 return "No more bottles of beer on the wall, no more bottles of beer." + "\n" +

@@ -5,10 +5,6 @@ import java.util.List;
 
 public class GetUserInfo {
 
-    static class User {
-        String birthday;
-    }
-
     static class RestClient {
         /**
          * DEMO METHOD
@@ -19,16 +15,19 @@ public class GetUserInfo {
         }
     }
 
-    private List<User> getUsers() {
+    private static List<User> getUsers() {
         long yyyymmdstr = System.currentTimeMillis();
         return RestClient.execute("GET", "http://example.com/users&starts_date=" + yyyymmdstr, 69);
     }
 
-    private int totalAge() {
-        List<User> users = getUsers();
+    private static int totalAge() {
+        return totalAge(getUsers());
+    }
+
+    private static int totalAge(List<User> users) {
         int total = 0;
         for (User u : users) {
-            int userBirthDay = getYearInTimeStr(u.birthday);
+            int userBirthDay = getYearInTimeStr(u.getBirthday());
             int currentYear = Calendar.getInstance().get(Calendar.YEAR);
             total += currentYear - userBirthDay;
         }

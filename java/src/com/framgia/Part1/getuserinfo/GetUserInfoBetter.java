@@ -3,13 +3,9 @@ package com.framgia.Part1.getuserinfo;
 import java.util.Calendar;
 import java.util.List;
 
-public class GetUserInfoBetterVersion {
+public class GetUserInfoBetter {
 
     private final int REQUEST_TIMEOUT = 69;
-
-    static class User {
-        String birthday;
-    }
 
     static class RestClient {
         /**
@@ -28,7 +24,10 @@ public class GetUserInfoBetterVersion {
     }
 
     private int calculateTotalAge() {
-        List<User> users = fetchUsers();
+        return calculateTotalAge(fetchUsers());
+    }
+
+    public int calculateTotalAge(List<User> users) {
         int total = 0;
         for (User user : users) {
             total += calculateAge(user);
@@ -37,7 +36,7 @@ public class GetUserInfoBetterVersion {
     }
 
     private int calculateAge(User user) {
-        int userBirthDay = getYearInTimeStr(user.birthday);
+        int userBirthDay = getYearInTimeStr(user.getBirthday());
         int currentYear = Calendar.getInstance().get(Calendar.YEAR);
         return currentYear - userBirthDay;
     }
