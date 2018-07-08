@@ -1,12 +1,12 @@
-package Part1.bottle;
+package com.framgia.Part3.bottle;
 
-public class BottleBetterVersion {
+public class BottleStep2 {
 
     private static String song() {
         return getVerses(99, 0);
     }
 
-    private static String getVerses(int start, int end) { // GOOD: specific name
+    private static String getVerses(int start, int end) {
         StringBuilder poem = new StringBuilder();
         for (int i = start; i >= end; i--) {
             poem.append(getVerse(i));
@@ -15,8 +15,9 @@ public class BottleBetterVersion {
         return poem.toString();
     }
 
-    private static String getVerse(int number) {  // GOOD: specific name
-        // GOOD: show the control flow and cases instead of hiding it in a big expression
+    private static String getVerse(int number) {
+        // Now identify all the sub problems and merge all cases
+        // into one, remember that all sub problem should also only do one thing at a time
         switch (number) {
             case 0:
                 return "No more bottles of beer on the wall, no more bottles of beer." + "\n" +
@@ -29,8 +30,15 @@ public class BottleBetterVersion {
                         "Take one down and pass it around, 1 bottle of beer on the wall.";
             default:
                 return number + " bottles of beer on the wall, " + number + " bottles of beer." + "\n" +
-                        "Take one down and pass it around, " + (number - 1) + " bottles of beer on the wall.";
+                        "Take one down and pass it around, " + getContainer(number - 1) + " of beer on the wall.";
         }
+    }
+
+    /**
+     * The sub problem choosing the correct container name  base on the number of bottle
+     */
+    private static String getContainer(int number) {
+        return number == 1 ? "bottle" : "bottles";
     }
 
     public static void main(String[] args) {

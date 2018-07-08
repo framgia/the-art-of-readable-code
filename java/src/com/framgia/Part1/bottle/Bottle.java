@@ -1,12 +1,12 @@
-package Part1.bottle;
+package com.framgia.Part1.bottle;
 
-public class BottleWithComment {
+public class Bottle {
 
     private static String song() {
         return getVerses(99, 0);
     }
 
-    private static String getVerses(int hi, int lo) { // BAD: hi and lo are not specific enough
+    private static String getVerses(int hi, int lo) {
         StringBuilder poem = new StringBuilder();
         for (int n = hi; n >= lo; n--) {
             poem.append(getVerse(n));
@@ -15,10 +15,7 @@ public class BottleWithComment {
         return poem.toString();
     }
 
-    private static String getVerse(int n) { // BAD: n is too generic
-        // BAD: inconsistent style
-        // BAD: incomprehensible code
-        // BAD: a giant expression
+    private static String getVerse(int n) {
         String verse = "";
         verse += n == 0 ? "No more bottles" : (n == 1) ? "1 bottle" : n + " bottles";
         verse += " of beer on the wall, ";

@@ -1,6 +1,6 @@
-package Part3.bottle;
+package com.framgia.Part3.bottle;
 
-public class Bottle {
+public class BottleStep1 {
 
     private static String song() {
         return getVerses(99, 0);
@@ -23,7 +23,7 @@ public class Bottle {
             case 1:
                 return "1 bottle of beer on the wall, 1 bottle of beer." + "\n" +
                         "Take one down and pass it around, no more bottles of beer on the wall.";
-            case 2:
+            case 2: // Can you identify the sub problem here and merge this case with the else case
                 return "2 bottles of beer on the wall, 2 bottles of beer." + "\n" +
                         "Take one down and pass it around, 1 bottle of beer on the wall.";
             default:
