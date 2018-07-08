@@ -1,4 +1,4 @@
-package Part2.serversecretkey;
+package com.framgia.Part2.serversecretkey;
 
 import javax.servlet.http.HttpServletRequest;
 

@@ -1,4 +1,4 @@
-package Part1.getuserinfo;
+package com.framgia.Part1.getuserinfo;
 
 import java.util.Calendar;
 import java.util.List;

@@ -1,4 +1,4 @@
-package Part3.bottle;
+package com.framgia.Part3.bottle;
 
 public class BottleStep3 {
 
