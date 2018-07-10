@@ -4,7 +4,7 @@ class Bottle
 {
     public function song()
     {
-        return $this->verses(99, 99);
+        return $this->verses(99, 0);
     }
 
     public function verses(int $starting, int $ending) // GOOD: specific name
