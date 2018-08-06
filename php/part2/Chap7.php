@@ -22,9 +22,9 @@ class SynchronizeXXXData
             'Java',
         ];
 
-        if ($isUpdateReady) {
+        if ($this->$isUpdateReady) {
             if ($isForcusUpdate) {
-                if (! $isSynchCompleted) {
+                if (! $this->$isSynchCompleted) {
                     $this->updateBackupDB();
                 } else {
                     $this->updateMainDB($dataUpdate);
@@ -38,26 +38,26 @@ class SynchronizeXXXData
 
     private function updateBackupDB()
     {
-        echo "update backup db";
+        echo 'update backup db';
     }
 
     private updateMainDB($dataUpdate = [])
     {
         if (! empty($dataUpdate)) {
-            echo "parse data to object model";
-            echo "check validation";
-            echo "update main database";
+            echo 'parse data to object model';
+            echo 'check validation';
+            echo 'update main database';
         }
     }
 
     private function  updateCache()
     {
-        if ($isCacheEnabled) {
-            echo "disable cache";
-            echo "update cache";
-            echo "output message update cache success";
+        if ($this->$isCacheEnabled) {
+            echo 'disable cache';
+            echo 'update cache';
+            echo 'output message update cache success';
         } else {
-            echo "output message errors";
+            echo 'output message errors';
         }
     }
 }
