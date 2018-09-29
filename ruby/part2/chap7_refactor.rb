@@ -10,9 +10,7 @@ class SynchronizeXXXData
   def update_database is_force_update
     data_update = ["Ruby", "PHP", "iOS", "Android"]
     return unless is_update_ready
-
-    update_cache && return unless is_force_update
-
+    return update_cache unless is_force_update
     update_main_db(data_update) if is_synch_completed
     update_backup_db
   end
